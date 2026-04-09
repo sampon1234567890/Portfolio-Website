@@ -4,11 +4,17 @@ import { gsap } from "gsap";
 import Navbar from "./components/Navbar";
 import SectionTitle from "./components/SectionTitle";
 import FadeContent from "./components/reactbits/FadeContent";
+import LiquidEther from "./components/reactbits/LiquidEther";
 import Footer from "./components/Footer";
 import { portfolioData } from "./data/portfolioData";
 
 export default function App() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const isClient = typeof window !== "undefined";
+  const isMobile = isClient ? window.innerWidth < 900 : false;
+  const prefersReducedMotion = isClient
+    ? window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    : false;
 
   useLayoutEffect(() => {
     const tl = gsap.timeline();
@@ -46,6 +52,24 @@ export default function App() {
 
       <main>
         <section className="hero" id="home">
+          <LiquidEther
+            className="hero-liquid"
+            colors={["#5227FF", "#FF9FFC", "#B19EEF"]}
+            mouseForce={isMobile ? 14 : 18}
+            cursorSize={100}
+            isViscous={!prefersReducedMotion}
+            viscous={isMobile ? 20 : 24}
+            iterationsViscous={prefersReducedMotion ? 4 : isMobile ? 8 : 14}
+            iterationsPoisson={prefersReducedMotion ? 8 : isMobile ? 12 : 16}
+            resolution={isMobile ? 0.35 : 0.45}
+            isBounce={false}
+            autoDemo
+            autoSpeed={0.45}
+            autoIntensity={prefersReducedMotion ? 0 : isMobile ? 1.4 : 1.9}
+            takeoverDuration={0.25}
+            autoResumeDelay={3000}
+            autoRampDuration={0.6}
+          />
           <div className="hero-grid container">
             <div className="hero-intro">
               <p className="eyebrow">Professional Portfolio</p>
@@ -131,6 +155,24 @@ export default function App() {
                 </ul>
               </FadeContent>
             ))}
+
+            <FadeContent className="card" delay={0.15}>
+              <h3>Tech Stack</h3>
+              <ul>
+                {portfolioData.techStack.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </FadeContent>
+
+            <FadeContent className="card" delay={0.2}>
+              <h3>Tools</h3>
+              <ul>
+                {portfolioData.tools.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </FadeContent>
           </div>
 
           <FadeContent className="service-strip">
@@ -197,6 +239,7 @@ export default function App() {
           <div className="cards two-col">
             <FadeContent className="card">
               <h3>Direct Links</h3>
+              <p>Phone: {portfolioData.contact.phone}</p>
               <p>
                 Email: <a href={`mailto:${portfolioData.contact.email}`}>{portfolioData.contact.email}</a>
               </p>

@@ -1,3 +1,5 @@
+import ScrambledText from "./reactbits/ScrambledText";
+
 const LINKS = [
   ["Home", "#home"],
   ["About", "#about"],
@@ -12,7 +14,9 @@ export default function Navbar() {
     <header className="site-header">
       <nav className="nav-wrap">
         <a href="#home" className="brand">
-          SFA
+          <ScrambledText className="nav-scrambled-text" radius={80} duration={0.8} speed={0.6} scrambleChars=".:*">
+            Portfolio
+          </ScrambledText>
         </a>
 
         <ul className="nav-links">

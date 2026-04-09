@@ -9,9 +9,9 @@ export const portfolioData = {
     background:
       "My journey in technology started with solving practical school and community problems through software. Over time, I took leadership and operations roles in project teams while continuing to build full-stack web solutions that are reliable, scalable, and user-centered.",
     education: [
-      "Bachelor of Science in Information Technology (in progress)",
+      "Bachelor of Science in Information Technology",
       "University of the Immaculate Conception",
-      "Continuous self-study in backend systems, RAG architecture, and AI model fine-tuning"
+      "2023 - Present"
     ],
     missionVision:
       "My mission is to create dependable software that improves workflows and delivers clear value to users. My vision is to become a software engineer who combines strong engineering fundamentals with practical AI integrations for real-world impact.",
@@ -27,10 +27,14 @@ export const portfolioData = {
     {
       category: "Technical Skills",
       items: [
-        "Frontend Development (React.js, Tailwind CSS)",
-        "Backend Development (API and system logic design)",
-        "Database Management and Data Modeling",
-        "RAG exploration and AI fine-tuning fundamentals"
+        "Web-Application Development",
+        "UI/UX Design",
+        "Mobile Development",
+        "Relational Database Design",
+        "Software Testing & Quality Assurance",
+        "Project Coordination & Tracking",
+        "Technical Documentation",
+        "Team Collaboration"
       ]
     },
     {
@@ -47,6 +51,8 @@ export const portfolioData = {
       items: ["React", "Supabase", "Firebase", "Git/GitHub", "Figma", "VS Code"]
     }
   ],
+  techStack: ["HTML", "CSS", "JavaScript", "React", "MySQL", "Laravel", "MSSQL"],
+  tools: ["Visual Studio Code", "Figma", "GitHub", "Notion"],
   services: [
     "Web Development",
     "Project Management",
@@ -117,7 +123,8 @@ export const portfolioData = {
     }
   ],
   contact: {
-    email: "sebastian.ampon@email.com",
+    phone: "0991 217 8369",
+    email: "ampon.2300000001231@uic.edu.ph",
     linkedin: "https://www.linkedin.com/in/sebastian-ampon",
     github: "https://github.com"
   },
