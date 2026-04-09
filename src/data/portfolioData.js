@@ -1,8 +1,7 @@
 export const portfolioData = {
   name: "Sebastian Lex F. Ampon",
   title: "Information Technology Student | Aspiring Backend Developer",
-  photo:
-    "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=800&q=80",
+  photo: "/PortfolioPic.png",
   summary:
     "Information Technology student with hands-on experience building web and system-based academic projects, with growing expertise in backend development, Artificial Intelligence, Retrieval-Augmented Generation (RAG), and model fine-tuning.",
   about: {

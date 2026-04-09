@@ -5,6 +5,9 @@ import Navbar from "./components/Navbar";
 import SectionTitle from "./components/SectionTitle";
 import FadeContent from "./components/reactbits/FadeContent";
 import LiquidEther from "./components/reactbits/LiquidEther";
+import SplitText from "./components/reactbits/SplitText";
+import GradientText from "./components/reactbits/GradientText";
+import ScrollReveal from "./components/reactbits/ScrollReveal";
 import Footer from "./components/Footer";
 import { portfolioData } from "./data/portfolioData";
 
@@ -55,27 +58,55 @@ export default function App() {
           <LiquidEther
             className="hero-liquid"
             colors={["#5227FF", "#FF9FFC", "#B19EEF"]}
-            mouseForce={isMobile ? 14 : 18}
-            cursorSize={100}
+            mouseForce={isMobile ? 12 : 16}
+            cursorSize={isMobile ? 80 : 100}
             isViscous={!prefersReducedMotion}
-            viscous={isMobile ? 20 : 24}
-            iterationsViscous={prefersReducedMotion ? 4 : isMobile ? 8 : 14}
-            iterationsPoisson={prefersReducedMotion ? 8 : isMobile ? 12 : 16}
-            resolution={isMobile ? 0.35 : 0.45}
+            viscous={isMobile ? 16 : 20}
+            iterationsViscous={prefersReducedMotion ? 2 : isMobile ? 4 : 8}
+            iterationsPoisson={prefersReducedMotion ? 4 : isMobile ? 6 : 10}
+            resolution={isMobile ? 0.25 : 0.35}
             isBounce={false}
             autoDemo
-            autoSpeed={0.45}
-            autoIntensity={prefersReducedMotion ? 0 : isMobile ? 1.4 : 1.9}
+            autoSpeed={0.4}
+            autoIntensity={prefersReducedMotion ? 0 : isMobile ? 1.2 : 1.6}
             takeoverDuration={0.25}
             autoResumeDelay={3000}
             autoRampDuration={0.6}
           />
           <div className="hero-grid container">
             <div className="hero-intro">
-              <p className="eyebrow">Professional Portfolio</p>
-              <h1>{portfolioData.name}</h1>
-              <p className="hero-title">{portfolioData.title}</p>
-              <p className="hero-summary">{portfolioData.summary}</p>
+              <SplitText
+                text="Hi! I'm Sebastian Lex"
+                className="hero-split-name"
+                delay={45}
+                duration={1}
+                ease="power3.out"
+                splitType="chars"
+                from={{ opacity: 0, y: 36 }}
+                to={{ opacity: 1, y: 0 }}
+                threshold={0.15}
+                rootMargin="-80px"
+                textAlign="left"
+                tag="h1"
+              />
+              <GradientText
+                className="hero-title"
+                colors={["#5227FF", "#FF9FFC", "#B19EEF"]}
+                animationSpeed={8}
+                showBorder={false}
+              >
+                {portfolioData.title}
+              </GradientText>
+              <ScrollReveal
+                baseOpacity={0.15}
+                enableBlur
+                baseRotation={0}
+                blurStrength={3}
+                containerClassName="hero-summary-reveal"
+                textClassName="hero-summary"
+              >
+                {portfolioData.summary}
+              </ScrollReveal>
               <div className="hero-actions">
                 <a className="btn primary" href="#contact">
                   Let&apos;s Connect
